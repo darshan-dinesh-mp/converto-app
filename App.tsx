@@ -8,8 +8,8 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
-        {/* <Stack.Screen name="Loading" component={LoadingScreen} options={{ headerShown: false }} /> */}
+      <Stack.Navigator initialRouteName="Loading" screenOptions={{ headerShown: false, animation: 'fade_from_bottom' }}>
+        <Stack.Screen name="Loading" component={LoadingScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>

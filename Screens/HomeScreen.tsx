@@ -4,9 +4,9 @@ import Area from '../components/Area/Area'
 
 const HomeScreen = () => {
     return (
-        <View>
-            <Text>HomeScreen<Area /></Text>
-        </View>
+        <>
+            <Area />
+        </>
     )
 }
 

@@ -22,7 +22,7 @@ const LoadingScreen = ({ navigation }) => {
 
         const timeout = setTimeout(() => {
             navigation.replace('Home');
-        }, 4000);
+        }, 40000);
 
         return () => {
             clearInterval(interval);
@@ -32,7 +32,19 @@ const LoadingScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Animated.Text
+
+            <Image
+                source={require('../assets/pxfuel.jpg')}
+                style={styles.logo}
+                resizeMode="contain"
+            />
+            <Text style={styles.welcomeText}>Welcome To <Text style={{ fontWeight: '900' }}>ConverTo!</Text></Text>
+            <Text style={{ marginBottom: 20, }}>Your All-in-One Unit Conversion App</Text>
+            <Image
+                source={require('../assets/loading.gif')}
+                style={styles.gif}
+            />
+            {/* <Animated.Text
                 style={{
                     color: '#22223B',
                     fontFamily: 'monospace',
@@ -41,7 +53,7 @@ const LoadingScreen = ({ navigation }) => {
                 }}
             >
                 ‹loading›
-            </Animated.Text>
+            </Animated.Text> */}
             <Text style={{ color: 'gray', fontSize: 10, position: 'absolute', bottom: 0 }}>Made by d_rsh_n</Text>
         </View>
     );
@@ -58,6 +70,7 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         marginBottom: 20,
+        borderRadius: 50,
     },
     gif: {
         width: 30,
@@ -66,7 +79,7 @@ const styles = StyleSheet.create({
     welcomeText: {
         fontSize: 24,
         fontWeight: '500',
-        marginBottom: 20,
+        marginBottom: 10,
         color: '#22223B'
     },
 });

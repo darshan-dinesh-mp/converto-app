@@ -39,12 +39,12 @@ const LoadingScreen = ({ navigation }) => {
                 resizeMode="contain"
             />
             <Text style={styles.welcomeText}>Welcome To <Text style={{ fontWeight: '900' }}>ConverTo!</Text></Text>
-            <Text style={{ marginBottom: 20, }}>Your All-in-One Unit Conversion App</Text>
+            <Text style={{ marginBottom: 20, color: 'black' }}>Your All-in-One Unit Conversion App</Text>
             <Image
                 source={require('../assets/loading.gif')}
                 style={styles.gif}
             />
-            {/* <Animated.Text
+            <Animated.Text
                 style={{
                     color: '#22223B',
                     fontFamily: 'monospace',
@@ -52,8 +52,8 @@ const LoadingScreen = ({ navigation }) => {
                     opacity: fadeAnim,
                 }}
             >
-                ‹loading›
-            </Animated.Text> */}
+                loading
+            </Animated.Text>
             <Text style={{ color: 'gray', fontSize: 10, position: 'absolute', bottom: 0 }}>Made by d_rsh_n</Text>
         </View>
     );

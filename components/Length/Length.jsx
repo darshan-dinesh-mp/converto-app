@@ -7,8 +7,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Length = () => {
   const [fromValue, setFromValue] = useState(0);
   const [result, setResult] = useState(0);
-  const [fromUnit, setFromUnit] = useState("Square Meters");
-  const [toUnit, setToUnit] = useState("Square Kilometers");
+  const [fromUnit, setFromUnit] = useState("km");
+  const [toUnit, setToUnit] = useState("m");
 
   useEffect(() => {
     if (fromUnit === "m") {

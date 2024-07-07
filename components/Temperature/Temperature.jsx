@@ -7,8 +7,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Temperature = () => {
   const [fromValue, setFromValue] = useState(0);
   const [result, setResult] = useState(0);
-  const [fromUnit, setFromUnit] = useState("Square Meters");
-  const [toUnit, setToUnit] = useState("Square Kilometers");
+  const [fromUnit, setFromUnit] = useState("Degree Celcius");
+  const [toUnit, setToUnit] = useState("Fahrenheit");
 
   useEffect(() => {
     if (fromUnit == "Degree Celcius") {

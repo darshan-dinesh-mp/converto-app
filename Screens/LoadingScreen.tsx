@@ -21,7 +21,7 @@ const LoadingScreen = ({ navigation }) => {
         }, 1200);
 
         const timeout = setTimeout(() => {
-            navigation.replace('Home');
+            // navigation.replace('Home');
         }, 4000);
 
         return () => {

@@ -1,4 +1,4 @@
-import { Animated, ImageBackground, Linking, Modal, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, View, Text } from 'react-native'
+import { Animated, ImageBackground, Linking, Modal, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, View, Text, Image } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import { Picker } from '@react-native-picker/picker'
 import Area from '../components/Area/Area'
@@ -41,7 +41,12 @@ const HomeScreen = () => {
             source={require('../assets/pxfuel.jpg')}
             style={styles.imageBackground}
         >
-            <View style={{ padding: 30, backgroundColor: 'rgba(0,0,0,0.6)', height: '100%', width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <View style={{ padding: 30, backgroundColor: 'rgba(0,0,0,0.8)', height: '100%', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                <Image
+                    source={require('../assets/pxfuel.jpg')}
+                    style={styles.logo}
+                    resizeMode="contain"
+                />
                 <View style={styles.pickerContainer}>
                     <Picker
                         selectedValue={optionValue}
@@ -53,12 +58,14 @@ const HomeScreen = () => {
                         ))}
                     </Picker>
                 </View>
-                {optionValue == "Length" ? <Length /> : ''}
-                {optionValue == "Temperature" ? <Temperature /> : ''}
-                {optionValue == "Speed" ? <Speed /> : ''}
-                {optionValue == "Volume" ? <Volume /> : ''}
-                {optionValue == "Mass" ? <Mass /> : ''}
-                {optionValue == "Area" ? <Area /> : ''}
+                <View style={{ marginBottom: 50 }}>
+                    {optionValue == "Length" ? <Length /> : ''}
+                    {optionValue == "Temperature" ? <Temperature /> : ''}
+                    {optionValue == "Speed" ? <Speed /> : ''}
+                    {optionValue == "Volume" ? <Volume /> : ''}
+                    {optionValue == "Mass" ? <Mass /> : ''}
+                    {optionValue == "Area" ? <Area /> : ''}
+                </View>
             </View>
             <TouchableOpacity
                 style={styles.fab}
@@ -122,6 +129,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    logo: {
+        width: 200,
+        height: 200,
+        display: 'flex',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        justifyContent: 'center',
+    },
     pickerContainer: {
         width: '50%',
         marginBottom: 10,
@@ -130,7 +145,7 @@ const styles = StyleSheet.create({
     },
     picker: {
         color: 'white',
-        backgroundColor: 'darkred',
+        backgroundColor: '#161925',
     },
     fab: {
         position: 'absolute',

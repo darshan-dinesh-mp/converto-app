@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
   icon: {
     marginVertical: 20,
     transform: [{ rotate: '90deg' }],
+    alignSelf: 'center'
   },
   imageBackground: {
     width: '100%',

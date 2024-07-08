@@ -42,11 +42,14 @@ const HomeScreen = () => {
             style={styles.imageBackground}
         >
             <View style={{ padding: 30, backgroundColor: 'rgba(0,0,0,0.8)', height: '100%', width: '100%', display: 'flex', justifyContent: 'center' }}>
-                <Image
-                    source={require('../assets/app_logo_2.png')}
-                    style={styles.logo}
-                    resizeMode="contain"
-                />
+                <View style={{ position: 'absolute', top: 20, left: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 10 }}>
+                    <Image
+                        source={require('../assets/app_logo_nav.png')}
+                        style={styles.logo}
+                        resizeMode="contain"
+                    />
+                    <Text style={{ color: 'white', fontWeight: '900', fontSize: 24, fontFamily: 'monospace' }}>ConverTo</Text>
+                </View>
                 <View style={styles.pickerContainer}>
                     <Picker
                         selectedValue={optionValue}
@@ -130,19 +133,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     logo: {
-        width: 100,
-        height: 100,
-        margin: 25,
-        display: 'flex',
-        flexDirection: 'row',
-        alignSelf: 'center',
-        justifyContent: 'center',
+        width: 50,
+        height: 50,
         borderRadius: 50,
+        backgroundColor: 'white',
     },
     pickerContainer: {
         width: '50%',
         marginBottom: 10,
         borderRadius: 5,
+        borderWidth: 0.5,
+        borderColor: 'white',
         overflow: 'hidden',
     },
     picker: {

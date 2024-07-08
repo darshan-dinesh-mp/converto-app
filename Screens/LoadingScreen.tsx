@@ -22,7 +22,7 @@ const LoadingScreen = ({ navigation }) => {
 
         const timeout = setTimeout(() => {
             navigation.replace('Home');
-        }, 50000);
+        }, 4000);
 
         return () => {
             clearInterval(interval);
@@ -32,15 +32,13 @@ const LoadingScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-
             <Image
                 source={require('../assets/app_logo_2.png')}
                 style={styles.logo}
                 resizeMode="contain"
             />
-            <Text style={styles.welcomeText}>Welcome!</Text>
-            <Text style={{ marginBottom: 20, color: 'black' }}>Your All-in-One Unit Conversion App</Text>
-            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
+            <Text style={styles.welcomeText}>Your All-in-One Unit Conversion App</Text>
+            <View style={{ position: 'absolute', bottom: 70, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
                 <Text style={{ color: 'black', fontWeight: '500' }}>loading</Text>
                 <Image
                     source={require('../assets/loading.gif')}
@@ -60,21 +58,18 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     logo: {
-        width: 200,
-        height: 200,
-        marginBottom: 20,
-        borderRadius: 500,
-        borderWidth: 1,
+        width: 250,
+        height: 250,
         borderColor: 'black',
-        elevation: 5,
+        marginBottom: 20,
     },
     gif: {
         width: 30,
         height: 30,
     },
     welcomeText: {
-        fontSize: 24,
-        fontWeight: '900',
+        fontSize: 20,
+        fontWeight: '700',
         marginBottom: 10,
         color: 'black'
     },

@@ -40,20 +40,13 @@ const LoadingScreen = ({ navigation }) => {
             />
             <Text style={styles.welcomeText}>Welcome To <Text style={{ fontWeight: '900' }}>ConverTo!</Text></Text>
             <Text style={{ marginBottom: 20, color: 'black' }}>Your All-in-One Unit Conversion App</Text>
-            <Image
-                source={require('../assets/loading.gif')}
-                style={styles.gif}
-            />
-            <Animated.Text
-                style={{
-                    color: '#22223B',
-                    fontFamily: 'monospace',
-                    fontWeight: '900',
-                    opacity: fadeAnim,
-                }}
-            >
-                loading
-            </Animated.Text>
+            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
+                <Text style={{ color: 'black', fontWeight: '500' }}>loading</Text>
+                <Image
+                    source={require('../assets/loading.gif')}
+                    style={styles.gif}
+                />
+            </View>
             <Text style={{ color: 'gray', fontSize: 10, position: 'absolute', bottom: 0 }}>Made by d_rsh_n</Text>
         </View>
     );
@@ -80,7 +73,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: '500',
         marginBottom: 10,
-        color: '#22223B'
+        color: 'black'
     },
 });
 

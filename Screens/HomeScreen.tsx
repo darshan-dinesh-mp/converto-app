@@ -41,7 +41,7 @@ const HomeScreen = () => {
             source={require('../assets/pxfuel.jpg')}
             style={styles.imageBackground}
         >
-            <View style={{ padding: 30, backgroundColor: 'rgba(0,0,0,0.8)', height: '100%', width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <View style={{ padding: 30, backgroundColor: 'rgba(15,15,25,0.8)', height: '100%', width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <View style={{ position: 'absolute', top: 20, left: 20, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 10 }}>
                     <Image
                         source={require('../assets/app_logo_nav.png')}
@@ -133,8 +133,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     logo: {
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
         borderRadius: 50,
         backgroundColor: 'white',
     },
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     },
     picker: {
         color: 'white',
-        backgroundColor: '#161925',
+        backgroundColor: '#252525',
     },
     fab: {
         position: 'absolute',

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Temperature = () => {
-  const [fromValue, setFromValue] = useState(0);
+  const [fromValue, setFromValue] = useState('0');
   const [result, setResult] = useState(0);
   const [fromUnit, setFromUnit] = useState("Degree Celcius");
   const [toUnit, setToUnit] = useState("Fahrenheit");
@@ -96,7 +96,7 @@ const Temperature = () => {
           value={result !== null ? result.toString() : ''}
           editable={false}
           placeholder="Result"
-          style={styles.input}
+          style={[styles.input, styles.resultInput]}
         />
       </View>
     </View>
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
   },
   resultInput: {
     color: 'black',
+    fontWeight: '900',
   },
   icon: {
     marginVertical: 20,

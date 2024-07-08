@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Area = () => {
-    const [fromValue, setFromValue] = useState<number>(0);
-    const [result, setResult] = useState<number>(0);
-    const [fromUnit, setFromUnit] = useState<string>("Square Meters");
-    const [toUnit, setToUnit] = useState<string>("Square Kilometers");
+    const [fromValue, setFromValue] = useState('1');
+    const [result, setResult] = useState(0);
+    const [fromUnit, setFromUnit] = useState("Square Meters");
+    const [toUnit, setToUnit] = useState("Square Kilometers");
 
     useEffect(() => {
         if (fromUnit == "Square Millimeters") {
@@ -271,7 +271,7 @@ const Area = () => {
                     value={result !== null ? result.toString() : ''}
                     editable={false}
                     placeholder="Result"
-                    style={styles.input}
+                    style={[styles.input, styles.resultInput]}
                 />
             </View>
         </View>
@@ -310,6 +310,7 @@ const styles = StyleSheet.create({
     },
     resultInput: {
         color: 'black',
+        fontWeight: '900',
     },
     icon: {
         marginVertical: 20,

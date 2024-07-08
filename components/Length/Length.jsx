@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Length = () => {
-  const [fromValue, setFromValue] = useState(0);
+  const [fromValue, setFromValue] = useState('1');
   const [result, setResult] = useState(0);
   const [fromUnit, setFromUnit] = useState("km");
   const [toUnit, setToUnit] = useState("m");
@@ -160,7 +160,7 @@ const Length = () => {
           value={result !== null ? result.toString() : ''}
           editable={false}
           placeholder="Result"
-          style={styles.input}
+          style={[styles.input, styles.resultInput]}
         />
       </View>
     </View>
@@ -192,6 +192,7 @@ const styles = StyleSheet.create({
   },
   resultInput: {
     color: 'black',
+    fontWeight: '900',
   },
   icon: {
     marginVertical: 20,

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
     picker: {
         color: 'white',
-        backgroundColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(0,0,0,0.8)',
     },
 });
 

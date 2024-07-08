@@ -22,7 +22,7 @@ const LoadingScreen = ({ navigation }) => {
 
         const timeout = setTimeout(() => {
             navigation.replace('Home');
-        }, 4000);
+        }, 50000);
 
         return () => {
             clearInterval(interval);
@@ -34,11 +34,11 @@ const LoadingScreen = ({ navigation }) => {
         <View style={styles.container}>
 
             <Image
-                source={require('../assets/pxfuel.jpg')}
+                source={require('../assets/app_logo_2.png')}
                 style={styles.logo}
                 resizeMode="contain"
             />
-            <Text style={styles.welcomeText}>Welcome To <Text style={{ fontWeight: '900' }}>ConverTo!</Text></Text>
+            <Text style={styles.welcomeText}>Welcome!</Text>
             <Text style={{ marginBottom: 20, color: 'black' }}>Your All-in-One Unit Conversion App</Text>
             <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
                 <Text style={{ color: 'black', fontWeight: '500' }}>loading</Text>
@@ -47,7 +47,7 @@ const LoadingScreen = ({ navigation }) => {
                     style={styles.gif}
                 />
             </View>
-            <Text style={{ color: 'gray', fontSize: 10, position: 'absolute', bottom: 0 }}>Made by d_rsh_n</Text>
+            <Text style={{ color: 'gray', fontSize: 10, position: 'absolute', bottom: 0 }}>Made by Darshan</Text>
         </View>
     );
 };
@@ -63,7 +63,10 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         marginBottom: 20,
-        borderRadius: 50,
+        borderRadius: 500,
+        borderWidth: 1,
+        borderColor: 'black',
+        elevation: 5,
     },
     gif: {
         width: 30,
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     },
     welcomeText: {
         fontSize: 24,
-        fontWeight: '500',
+        fontWeight: '900',
         marginBottom: 10,
         color: 'black'
     },

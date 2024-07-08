@@ -43,7 +43,7 @@ const HomeScreen = () => {
         >
             <View style={{ padding: 30, backgroundColor: 'rgba(0,0,0,0.8)', height: '100%', width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Image
-                    source={require('../assets/pxfuel.jpg')}
+                    source={require('../assets/app_logo_2.png')}
                     style={styles.logo}
                     resizeMode="contain"
                 />
@@ -130,12 +130,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     logo: {
-        width: 200,
-        height: 200,
+        width: 100,
+        height: 100,
+        margin: 25,
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'center',
         justifyContent: 'center',
+        borderRadius: 50,
     },
     pickerContainer: {
         width: '50%',

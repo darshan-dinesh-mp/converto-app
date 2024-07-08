@@ -126,49 +126,44 @@ const Length = () => {
   };
 
   return (
-    <ImageBackground
-      source={require('../../assets/pxfuel.jpg')}
-      style={styles.imageBackground}
-    >
-      <View style={styles.container}>
-        <View style={styles.inpurContainer}>
-          <Picker
-            selectedValue={fromUnit}
-            onValueChange={changeFromUnit}
-            style={styles.picker}
-          >
-            {units.map(unit => (
-              <Picker.Item key={unit} label={unit} value={unit} />
-            ))}
-          </Picker>
-          <TextInput
-            value={fromValue}
-            onChangeText={changeFromValue}
-            placeholder="Enter value"
-            keyboardType="numeric"
-            style={styles.input}
-          />
-        </View>
-        <FontAwesomeIcon icon={faArrowRight} style={styles.icon} size={32} color="white" />
-        <View style={styles.inpurContainer}>
-          <Picker
-            selectedValue={toUnit}
-            onValueChange={changeToUnit}
-            style={styles.picker}
-          >
-            {units.map(unit => (
-              <Picker.Item key={unit} label={unit} value={unit} />
-            ))}
-          </Picker>
-          <TextInput
-            value={result !== null ? result.toString() : ''}
-            editable={false}
-            placeholder="Result"
-            style={styles.input}
-          />
-        </View>
+    <View>
+      <View style={styles.inpurContainer}>
+        <Picker
+          selectedValue={fromUnit}
+          onValueChange={changeFromUnit}
+          style={styles.picker}
+        >
+          {units.map(unit => (
+            <Picker.Item key={unit} label={unit} value={unit} />
+          ))}
+        </Picker>
+        <TextInput
+          value={fromValue}
+          onChangeText={changeFromValue}
+          placeholder="Enter value"
+          keyboardType="numeric"
+          style={styles.input}
+        />
       </View>
-    </ImageBackground >
+      <FontAwesomeIcon icon={faArrowRight} style={styles.icon} size={32} color="white" />
+      <View style={styles.inpurContainer}>
+        <Picker
+          selectedValue={toUnit}
+          onValueChange={changeToUnit}
+          style={styles.picker}
+        >
+          {units.map(unit => (
+            <Picker.Item key={unit} label={unit} value={unit} />
+          ))}
+        </Picker>
+        <TextInput
+          value={result !== null ? result.toString() : ''}
+          editable={false}
+          placeholder="Result"
+          style={styles.input}
+        />
+      </View>
+    </View>
   );
 };
 
@@ -177,15 +172,6 @@ const units = [
 ];
 
 const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    padding: 20,
-  },
   inpurContainer: {
     width: '100%',
     backgroundColor: '#ddd',

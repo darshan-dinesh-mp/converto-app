@@ -22,7 +22,7 @@ const LoadingScreen = ({ navigation }) => {
 
         const timeout = setTimeout(() => {
             navigation.replace('Home');
-        }, 40000);
+        }, 4000);
 
         return () => {
             clearInterval(interval);

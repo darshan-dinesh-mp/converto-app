@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native'
+import { ImageBackground, StyleSheet, View } from 'react-native'
 import React, { useState } from 'react'
 import { Picker } from '@react-native-picker/picker'
 import Area from '../components/Area/Area'
@@ -16,23 +16,30 @@ const HomeScreen = () => {
     };
 
     return (
-        <>
-            <Picker
-                selectedValue={optionValue}
-                onValueChange={changeOption}
-                style={styles.picker}
-            >
-                {units.map(unit => (
-                    <Picker.Item key={unit} label={unit} value={unit} />
-                ))}
-            </Picker>
-            {optionValue == "Length" ? <Length /> : ''}
-            {optionValue == "Temperature" ? <Temperature /> : ''}
-            {optionValue == "Speed" ? <Speed /> : ''}
-            {optionValue == "Volume" ? <Volume /> : ''}
-            {optionValue == "Mass" ? <Mass /> : ''}
-            {optionValue == "Area" ? <Area /> : ''}
-        </>
+
+        <ImageBackground
+            source={require('../assets/pxfuel.jpg')}
+            style={styles.imageBackground}
+        >
+            <View>
+
+                <Picker
+                    selectedValue={optionValue}
+                    onValueChange={changeOption}
+                    style={styles.picker}
+                >
+                    {units.map(unit => (
+                        <Picker.Item key={unit} label={unit} value={unit} />
+                    ))}
+                </Picker>
+                {optionValue == "Length" ? <Length /> : ''}
+                {optionValue == "Temperature" ? <Temperature /> : ''}
+                {optionValue == "Speed" ? <Speed /> : ''}
+                {optionValue == "Volume" ? <Volume /> : ''}
+                {optionValue == "Mass" ? <Mass /> : ''}
+                {optionValue == "Area" ? <Area /> : ''}
+            </View>
+        </ImageBackground>
     )
 }
 
@@ -47,16 +54,16 @@ const units = [
 ];
 
 const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
+    imageBackground: {
+        width: '100%',
+        height: '100%',
         justifyContent: 'center',
-        alignItems: 'center',
     },
     picker: {
-        color: 'black',
-        backgroundColor: '#ddd',
-        borderRadius: 5,
+        color: 'white',
+        backgroundColor: 'brown',
+        width: '50%',
+        borderRadius: 50,
     },
 });
 

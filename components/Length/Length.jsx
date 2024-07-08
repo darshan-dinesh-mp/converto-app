@@ -3,112 +3,113 @@ import { View, TextInput, StyleSheet, ImageBackground } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles';
 
 const Length = () => {
   const [fromValue, setFromValue] = useState('1');
   const [result, setResult] = useState(0);
-  const [fromUnit, setFromUnit] = useState("km");
-  const [toUnit, setToUnit] = useState("m");
+  const [fromUnit, setFromUnit] = useState("Kilometers");
+  const [toUnit, setToUnit] = useState("Meters");
 
   useEffect(() => {
-    if (fromUnit === "m") {
-      if (toUnit === "m") setResult(fromValue);
-      else if (toUnit === "cm") setResult(fromValue * 100);
-      else if (toUnit === "km") setResult(fromValue / 1000);
-      else if (toUnit === "mm") setResult(fromValue * 1000);
-      else if (toUnit === "in") setResult(fromValue * 39.37);
-      else if (toUnit === "ft") setResult(fromValue * 3.281);
-      else if (toUnit === "yd") setResult(fromValue * 1.094);
-      else if (toUnit === "mi") setResult(fromValue / 1609);
-      else if (toUnit === "nautical mile") setResult(fromValue / 1852);
+    if (fromUnit === "Meters") {
+      if (toUnit === "Meters") setResult(fromValue);
+      else if (toUnit === "Centimeters") setResult(fromValue * 100);
+      else if (toUnit === "Kilometers") setResult(fromValue / 1000);
+      else if (toUnit === "Millimeters") setResult(fromValue * 1000);
+      else if (toUnit === "Inches") setResult(fromValue * 39.37);
+      else if (toUnit === "Feet") setResult(fromValue * 3.281);
+      else if (toUnit === "Yards") setResult(fromValue * 1.094);
+      else if (toUnit === "Miles") setResult(fromValue / 1609);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 1852);
     }
-    if (fromUnit === "cm") {
-      if (toUnit === "cm") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue / 100);
-      else if (toUnit === "km") setResult(fromValue / 100000);
-      else if (toUnit === "mm") setResult(fromValue * 10);
-      else if (toUnit === "in") setResult(fromValue / 2.54);
-      else if (toUnit === "ft") setResult(fromValue / 30.48);
-      else if (toUnit === "yd") setResult(fromValue / 91.44);
-      else if (toUnit === "mi") setResult(fromValue / 160900);
-      else if (toUnit === "nautical mile") setResult(fromValue / 185200);
+    if (fromUnit === "Centimeters") {
+      if (toUnit === "Centimeters") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue / 100);
+      else if (toUnit === "Kilometers") setResult(fromValue / 100000);
+      else if (toUnit === "Millimeters") setResult(fromValue * 10);
+      else if (toUnit === "Inches") setResult(fromValue / 2.54);
+      else if (toUnit === "Feet") setResult(fromValue / 30.48);
+      else if (toUnit === "Yards") setResult(fromValue / 91.44);
+      else if (toUnit === "Miles") setResult(fromValue / 160900);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 185200);
     }
-    if (fromUnit === "km") {
-      if (toUnit === "km") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue * 1000);
-      else if (toUnit === "cm") setResult(fromValue * 100000);
-      else if (toUnit === "mm") setResult(fromValue * 1000000);
-      else if (toUnit === "in") setResult(fromValue * 39370);
-      else if (toUnit === "ft") setResult(fromValue * 3281);
-      else if (toUnit === "yd") setResult(fromValue * 1094);
-      else if (toUnit === "mi") setResult(fromValue / 1.609);
-      else if (toUnit === "nautical mile") setResult(fromValue / 1.850);
+    if (fromUnit === "Kilometers") {
+      if (toUnit === "Kilometers") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue * 1000);
+      else if (toUnit === "Centimeters") setResult(fromValue * 100000);
+      else if (toUnit === "Millimeters") setResult(fromValue * 1000000);
+      else if (toUnit === "Inches") setResult(fromValue * 39370);
+      else if (toUnit === "Feet") setResult(fromValue * 3281);
+      else if (toUnit === "Yards") setResult(fromValue * 1094);
+      else if (toUnit === "Miles") setResult(fromValue / 1.609);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 1.850);
     }
-    if (fromUnit === "mm") {
-      if (toUnit === "mm") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue / 1000);
-      else if (toUnit === "cm") setResult(fromValue / 10);
-      else if (toUnit === "km") setResult(fromValue * 1000000);
-      else if (toUnit === "in") setResult(fromValue / 25.4);
-      else if (toUnit === "ft") setResult(fromValue / 304.8);
-      else if (toUnit === "yd") setResult(fromValue / 914.4);
-      else if (toUnit === "mi") setResult(fromValue / 1609000);
-      else if (toUnit === "nautical mile") setResult(fromValue / 1852000);
+    if (fromUnit === "Millimeters") {
+      if (toUnit === "Millimeters") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue / 1000);
+      else if (toUnit === "Centimeters") setResult(fromValue / 10);
+      else if (toUnit === "Kilometers") setResult(fromValue * 1000000);
+      else if (toUnit === "Inches") setResult(fromValue / 25.4);
+      else if (toUnit === "Feet") setResult(fromValue / 304.8);
+      else if (toUnit === "Yards") setResult(fromValue / 914.4);
+      else if (toUnit === "Miles") setResult(fromValue / 1609000);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 1852000);
     }
-    if (fromUnit === "in") {
-      if (toUnit === "in") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue / 39.37);
-      else if (toUnit === "cm") setResult(fromValue * 2.54);
-      else if (toUnit === "km") setResult(fromValue / 39370);
-      else if (toUnit === "mm") setResult(fromValue * 25.4);
-      else if (toUnit === "ft") setResult(fromValue / 12);
-      else if (toUnit === "yd") setResult(fromValue / 36);
-      else if (toUnit === "mi") setResult(fromValue / 63360);
-      else if (toUnit === "nautical mile") setResult(fromValue / 72910);
+    if (fromUnit === "Inches") {
+      if (toUnit === "Inches") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue / 39.37);
+      else if (toUnit === "Centimeters") setResult(fromValue * 2.54);
+      else if (toUnit === "Kilometers") setResult(fromValue / 39370);
+      else if (toUnit === "Millimeters") setResult(fromValue * 25.4);
+      else if (toUnit === "Feet") setResult(fromValue / 12);
+      else if (toUnit === "Yards") setResult(fromValue / 36);
+      else if (toUnit === "Miles") setResult(fromValue / 63360);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 72910);
     }
-    if (fromUnit === "ft") {
-      if (toUnit === "ft") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue / 3.281);
-      else if (toUnit === "cm") setResult(fromValue * 30.48);
-      else if (toUnit === "km") setResult(fromValue / 3281);
-      else if (toUnit === "mm") setResult(fromValue * 304.8);
-      else if (toUnit === "in") setResult(fromValue * 12);
-      else if (toUnit === "yd") setResult(fromValue / 3);
-      else if (toUnit === "mi") setResult(fromValue / 5280);
-      else if (toUnit === "nautical mile") setResult(fromValue / 6076);
+    if (fromUnit === "Feet") {
+      if (toUnit === "Feet") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue / 3.281);
+      else if (toUnit === "Centimeters") setResult(fromValue * 30.48);
+      else if (toUnit === "Kilometers") setResult(fromValue / 3281);
+      else if (toUnit === "Millimeters") setResult(fromValue * 304.8);
+      else if (toUnit === "Inches") setResult(fromValue * 12);
+      else if (toUnit === "Yards") setResult(fromValue / 3);
+      else if (toUnit === "Miles") setResult(fromValue / 5280);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 6076);
     }
-    if (fromUnit === "yd") {
-      if (toUnit === "yd") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue / 1.094);
-      else if (toUnit === "cm") setResult(fromValue * 91.44);
-      else if (toUnit === "km") setResult(fromValue / 1094);
-      else if (toUnit === "mm") setResult(fromValue * 914.4);
-      else if (toUnit === "in") setResult(fromValue * 36);
-      else if (toUnit === "ft") setResult(fromValue * 3);
-      else if (toUnit === "mi") setResult(fromValue / 1760);
-      else if (toUnit === "nautical mile") setResult(fromValue / 2025);
+    if (fromUnit === "Yards") {
+      if (toUnit === "Yards") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue / 1.094);
+      else if (toUnit === "Centimeters") setResult(fromValue * 91.44);
+      else if (toUnit === "Kilometers") setResult(fromValue / 1094);
+      else if (toUnit === "Millimeters") setResult(fromValue * 914.4);
+      else if (toUnit === "Inches") setResult(fromValue * 36);
+      else if (toUnit === "Feet") setResult(fromValue * 3);
+      else if (toUnit === "Miles") setResult(fromValue / 1760);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 2025);
     }
-    if (fromUnit === "mi") {
-      if (toUnit === "mi") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue * 1609);
-      else if (toUnit === "cm") setResult(fromValue * 160900);
-      else if (toUnit === "km") setResult(fromValue * 1.609);
-      else if (toUnit === "mm") setResult(fromValue * 1609000);
-      else if (toUnit === "in") setResult(fromValue * 63360);
-      else if (toUnit === "ft") setResult(fromValue * 5280);
-      else if (toUnit === "yd") setResult(fromValue * 1760);
-      else if (toUnit === "nautical mile") setResult(fromValue / 1.151);
+    if (fromUnit === "Miles") {
+      if (toUnit === "Miles") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue * 1609);
+      else if (toUnit === "Centimeters") setResult(fromValue * 160900);
+      else if (toUnit === "Kilometers") setResult(fromValue * 1.609);
+      else if (toUnit === "Millimeters") setResult(fromValue * 1609000);
+      else if (toUnit === "Inches") setResult(fromValue * 63360);
+      else if (toUnit === "Feet") setResult(fromValue * 5280);
+      else if (toUnit === "Yards") setResult(fromValue * 1760);
+      else if (toUnit === "Nautical Miles") setResult(fromValue / 1.151);
     }
-    if (fromUnit === "nautical mile") {
-      if (toUnit === "nautical mile") setResult(fromValue);
-      else if (toUnit === "m") setResult(fromValue * 1852);
-      else if (toUnit === "cm") setResult(fromValue * 185200);
-      else if (toUnit === "km") setResult(fromValue * 1.852);
-      else if (toUnit === "mm") setResult(fromValue * 1852000);
-      else if (toUnit === "in") setResult(fromValue * 72910);
-      else if (toUnit === "ft") setResult(fromValue * 6076);
-      else if (toUnit === "yd") setResult(fromValue * 2025);
-      else if (toUnit === "mi") setResult(fromValue * 1.151);
+    if (fromUnit === "Nautical Miles") {
+      if (toUnit === "Nautical Miles") setResult(fromValue);
+      else if (toUnit === "Meters") setResult(fromValue * 1852);
+      else if (toUnit === "Centimeters") setResult(fromValue * 185200);
+      else if (toUnit === "Kilometers") setResult(fromValue * 1.852);
+      else if (toUnit === "Millimeters") setResult(fromValue * 1852000);
+      else if (toUnit === "Inches") setResult(fromValue * 72910);
+      else if (toUnit === "Feet") setResult(fromValue * 6076);
+      else if (toUnit === "Yards") setResult(fromValue * 2025);
+      else if (toUnit === "Miles") setResult(fromValue * 1.151);
     }
   }, [fromValue, fromUnit, toUnit]);
 
@@ -168,42 +169,7 @@ const Length = () => {
 };
 
 const units = [
-  "m", "cm", "km", "mm", "in", "ft", "yd", "mi", "nautical mile"
+  "Meters", "Centimeters", "Kilometers", "Millimeters", "Inches", "Feet", "Yards", "Miles", "Nautical Miles"
 ];
-
-const styles = StyleSheet.create({
-  inpurContainer: {
-    width: '100%',
-    backgroundColor: '#ddd',
-    padding: 10,
-    borderRadius: 10,
-  },
-  picker: {
-    color: 'black',
-    backgroundColor: '#ddd',
-    borderRadius: 5,
-  },
-  input: {
-    backgroundColor: 'white',
-    borderRadius: 5,
-    borderWidth: 0.5,
-    padding: 10,
-    color: 'black',
-  },
-  resultInput: {
-    color: 'black',
-    fontWeight: '900',
-  },
-  icon: {
-    marginVertical: 20,
-    transform: [{ rotate: '90deg' }],
-    alignSelf: 'center'
-  },
-  imageBackground: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-  },
-});
 
 export default Length;

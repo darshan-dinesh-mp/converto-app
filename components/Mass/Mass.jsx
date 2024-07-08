@@ -3,6 +3,7 @@ import { View, TextInput, StyleSheet, ImageBackground } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles';
 
 const Mass = () => {
   const [fromValue, setFromValue] = useState('1');
@@ -129,40 +130,5 @@ const Mass = () => {
 const units = [
   "Kilogram", "Gram", "Milligram", "Metric Ton"
 ];
-
-const styles = StyleSheet.create({
-  inpurContainer: {
-    width: '100%',
-    backgroundColor: '#ddd',
-    padding: 10,
-    borderRadius: 10,
-  },
-  picker: {
-    color: 'black',
-    backgroundColor: '#ddd',
-    borderRadius: 5,
-  },
-  input: {
-    backgroundColor: 'white',
-    borderRadius: 5,
-    borderWidth: 0.5,
-    padding: 10,
-    color: 'black',
-  },
-  resultInput: {
-    color: 'black',
-    fontWeight: '900',
-  },
-  icon: {
-    marginVertical: 20,
-    transform: [{ rotate: '90deg' }],
-    alignSelf: 'center'
-  },
-  imageBackground: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-  },
-});
 
 export default Mass;

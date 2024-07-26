@@ -49,7 +49,7 @@ const Length = () => {
       if (toUnit === "Millimeters") setResult(fromValue);
       else if (toUnit === "Meters") setResult(fromValue / 1000);
       else if (toUnit === "Centimeters") setResult(fromValue / 10);
-      else if (toUnit === "Kilometers") setResult(fromValue * 1000000);
+      else if (toUnit === "Kilometers") setResult(fromValue / 1000000);
       else if (toUnit === "Inches") setResult(fromValue / 25.4);
       else if (toUnit === "Feet") setResult(fromValue / 304.8);
       else if (toUnit === "Yards") setResult(fromValue / 914.4);
